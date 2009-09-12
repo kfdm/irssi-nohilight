@@ -1,0 +1,5 @@
+Irssi script to prevent being hilighted by certain users.
+
+To use, set nohilight_nicks to a comma separated list of nicks to ignore
+
+Ex /set nohilight_nicks ChanServ,AuthServ,Spammer
