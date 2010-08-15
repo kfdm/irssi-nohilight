@@ -3,12 +3,12 @@ use vars qw($VERSION %IRSSI);
 
 $VERSION = "0.1";
 %IRSSI = (
-        authors => "Paul Traylor",
-        contact => "",
-        name => "nohilight",
-        description => "Do not hilight messages from a list of users",
-        license => "",
-        changed => ""
+	authors		=> "Paul Traylor",
+	name		=> "nohilight",
+	description	=> "Do not hilight messages from a list of users",
+	license		=> '',
+	url			=> 'http://github.com/kfdm/irssi-nohilight',
+	contact		=> 'http://github.com/kfdm/irssi-nohilight/issues'
 );
 
 sub remove_hilight {
@@ -27,3 +27,4 @@ sub remove_hilight {
 
 Irssi::signal_add_first('print text', 'remove_hilight');
 Irssi::settings_add_str($IRSSI{'name'}, 'nohilight_nicks', '');
+Irssi::print('%G>>%n '.$IRSSI{name}.' '.$VERSION.' loaded');
