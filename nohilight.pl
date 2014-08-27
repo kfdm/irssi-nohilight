@@ -14,7 +14,7 @@ $VERSION = "0.1";
 sub remove_hilight {
 	my ($dest, $text, $stripped) = @_;
 	if ($dest->{level} & MSGLEVEL_HILIGHT) {
-		my @nicks = split(/,/, Irssi::settings_get_str('nohilight_nicks'));
+		my @nicks = split(/[, ]/, Irssi::settings_get_str('nohilight_nicks'));
 		foreach my $nick (@nicks) {
 			if ($stripped =~ "$nick") {
 				my $window = $dest->{window};
