@@ -16,7 +16,7 @@ sub remove_hilight {
 	if ($dest->{level} & MSGLEVEL_HILIGHT) {
 		my @nicks = map(quotemeta, split(/[, ]/, Irssi::settings_get_str('nohilight_nicks')));
 		foreach my $nick (@nicks) {
-			if ($stripped =~ "$nick") {
+			if ($stripped =~ /<.?$nick>/) {
 				my $window = $dest->{window};
 				$window->print($text, MSGLEVEL_PUBLIC);
 				Irssi::signal_stop();
