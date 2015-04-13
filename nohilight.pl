@@ -18,6 +18,7 @@ sub remove_hilight {
 		foreach my $nick (@nicks) {
 			if ($stripped =~ /<.?$nick>/) {
 				my $window = $dest->{window};
+				$text =~ s/%/%%/g;
 				$window->print($text, MSGLEVEL_PUBLIC);
 				Irssi::signal_stop();
 			}
