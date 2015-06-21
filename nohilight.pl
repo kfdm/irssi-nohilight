@@ -21,6 +21,7 @@ sub remove_hilight {
 				$text =~ s/%/%%/g;
 				$window->print($text, MSGLEVEL_PUBLIC);
 				Irssi::signal_stop();
+				return;
 			}
 		}
 	}
