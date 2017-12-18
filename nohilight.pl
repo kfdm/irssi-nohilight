@@ -19,7 +19,12 @@ sub remove_hilight {
 			if ($stripped =~ /<.?$nick>/) {
 				my $window = $dest->{window};
 				$text =~ s/%/%%/g;
-				$window->print($text, MSGLEVEL_PUBLIC);
+
+				# Remove hilight msglevel
+				$dest->{level} ^= MSGLEVEL_HILIGHT;
+				$dest->{level} |= MSGLEVEL_NOHILIGHT;
+
+				$window->print($text, $dest->{level});
 				Irssi::signal_stop();
 				return;
 			}
