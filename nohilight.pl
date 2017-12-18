@@ -18,6 +18,8 @@ sub remove_hilight {
 		foreach my $nick (@nicks) {
 			if ($stripped =~ /<.?$nick>/) {
 				my $window = $dest->{window};
+
+				# Escape formatting character %
 				$text =~ s/%/%%/g;
 
 				# Remove hilight msglevel
