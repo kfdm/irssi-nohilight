@@ -18,8 +18,15 @@ sub remove_hilight {
 		foreach my $nick (@nicks) {
 			if ($stripped =~ /<.?$nick>/) {
 				my $window = $dest->{window};
+
+				# Escape formatting character %
 				$text =~ s/%/%%/g;
-				$window->print($text, MSGLEVEL_PUBLIC);
+
+				# Remove hilight msglevel
+				$dest->{level} ^= MSGLEVEL_HILIGHT;
+				$dest->{level} |= MSGLEVEL_NOHILIGHT;
+
+				$window->print($text, $dest->{level});
 				Irssi::signal_stop();
 				return;
 			}
