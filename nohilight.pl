@@ -6,7 +6,7 @@ $VERSION = "0.1";
 	authors		=> "Paul Traylor",
 	name		=> "nohilight",
 	description	=> "Do not hilight messages from a list of users",
-	license		=> '',
+	license		=> 'MIT',
 	url			=> 'http://github.com/kfdm/irssi-nohilight',
 	contact		=> 'http://github.com/kfdm/irssi-nohilight/issues'
 );
